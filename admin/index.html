@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Admin Panel</title>
-  </head>
-  <body>
-    <!-- Netlify CMS script -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <style>
+    /* Optional: Add some basic styling for a better initial look */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    #nc-root {
+      height: 100vh; /* Make the CMS take up the full viewport height */
+    }
+  </style>
+</head>
+<body>
+  <div id="nc-root"></div>
+  <script src="https://unpkg.com/netlify-cms@^3.0.0/dist/netlify-cms.js"></script>
+</body>
 </html>
