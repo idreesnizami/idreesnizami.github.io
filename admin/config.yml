@@ -1,33 +1,11 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-collections:
-  - name: "news"
-    label: "News Articles"
-    folder: "news"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - label: "தலைப்பு"         # Title
-        name: "title"
-        widget: "string"
-
-      - label: "தேதி"            # Date
-        name: "date"
-        widget: "datetime"
-
-      - label: "சுருக்கம்"        # Short Summary
-        name: "summary"
-        widget: "text"
-
-      - label: "படம்"            # Image
-        name: "thumbnail"
-        widget: "image"
-
-      - label: "முழுப் பதிவு"    # Full content
-        name: "body"
-        widget: "markdown"
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <!-- Netlify CMS script -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
+</html>
