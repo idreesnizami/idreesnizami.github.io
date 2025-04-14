@@ -1,98 +1,167 @@
-<!DOCTYPE html>
-<html lang="ta">
+<!DOCTYPE html><html lang="ta">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>இஸ்லாமிய அறிவுத்தளம்</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Noto Serif Tamil', serif;
-      background: #f4f6f9;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #34495e;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 5px solid #27ae60;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      border-radius: 5px;
-    }
-    .card h3 {
-      margin-bottom: 10px;
-    }
-    .card a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 10px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>அல்-ஹக் நியூஸ்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        header {
+            background: linear-gradient(to right, #1e3a8a, #2563eb);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header p {
+            margin-top: 8px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #1e3a8a;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #e0f2fe;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .news-card-content {
+            padding: 15px;
+        }
+        .news-card-content h3, .news-card-content h4 {
+            margin: 0 0 10px;
+            color: #111827;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .video-embed iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>அல்-ஹக் நியூஸ்</h1>
+        <p>உண்மையின் ஒளி, உலகத்தின் மீதும்</p>
+    </header><nav>
+    <a href="#">தலைப்பு செய்திகள்</a>
+    <a href="#">புதிய செய்திகள்</a>
+    <a href="#">உலக இஸ்லாமியச் செய்திகள்</a>
+    <a href="#">இந்தியா</a>
+    <a href="#">மதுரை/உங்கள் ஊர்</a>
+    <a href="#">ஹதீஸ் / தர்பியா</a>
+    <a href="#">பத்திரிக்கை</a>
+</nav>
 
-  <header>
-    <h1>இஸ்லாமிய அறிவுத்தளம்</h1>
-    <p>ஹதீஸ், கட்டுரைகள், இஸ்லாமிய கல்வி</p>
-  </header>
+<div class="container">
 
-  <nav>
-    <a href="index.html">முகப்பு</a>
-    <a href="hadith1.html">ஹதீஸ்</a>
-    <a href="#">கட்டுரைகள்</a>
-    <a href="#">தொடர்பு</a>
-  </nav>
+    <section class="top-story">
+        <h2>தலைப்பு செய்தி</h2>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/800x400" alt="Top Story">
+            <div class="news-card-content">
+                <h3>இன்று உலகம் எதிர்நோக்கும் முக்கியமான இஸ்லாமிய செய்திகள்</h3>
+                <p>இஸ்லாமிய உலகில் ஏற்பட்டுள்ள மாற்றங்களைப் பற்றிய விரிவான தொகுப்பு.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="container">
-    <div class="card">
-      <h3>ஹதீஸ் 1: நபி(ஸல்) அவர்களின் நற்பண்புகள்</h3>
-      <p><a href="hadith1.html">மேலும் வாசிக்க...</a></p>
-    </div>
+    <section class="latest-news">
+        <h2>புதிய செய்திகள்</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://via.placeholder.com/400x200" alt="News">
+                <div class="news-card-content">
+                    <h4>இந்தியாவில் ரமலான் சந்தை தொடங்கியது</h4>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://via.placeholder.com/400x200" alt="News">
+                <div class="news-card-content">
+                    <h4>மதுரையில் தர்பியா பயிற்சி முகாம்</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- மற்ற ஹதீஸ்கள்/பட்டியல் இங்கே சேர்க்கலாம் -->
-  </div>
+    <section class="category-section">
+        <h2>உலக இஸ்லாமியச் செய்திகள்</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://via.placeholder.com/400x200" alt="World News">
+                <div class="news-card-content">
+                    <p>ஊரக இஸ்லாமிய நாடுகளில் வளர்ந்து வரும் சமுதாய சேவைகள்.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-embed">
+        <h2>YouTube வீடியோ</h2>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+    </section>
+
+</div>
 
 </body>
 </html>
