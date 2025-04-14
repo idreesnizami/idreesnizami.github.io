@@ -77,49 +77,6 @@
       color: #facc15; /* Soft Gold */
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropbtn {
-      background-color: #1e3a8a;
-      color: white;
-      padding: 10px 15px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f4f6f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #ddd;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-      background-color: #ddd;
-      color: black;
-    }
-
     /* Search Bar */
     .search-form {
       display: flex;
@@ -169,12 +126,6 @@
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
-
-      /* Aligning Dropdown Menu to the right */
-      .dropdown {
-        width: 100%;
-        text-align: right;
-      }
     }
 
     /* Footer Section */
@@ -214,14 +165,6 @@
         <a href="#">மதுரை</a>
         <a href="#">ஹதீஸ்</a>
         <a href="#">பத்திரிக்கை</a>
-        <div class="dropdown">
-          <a href="#" class="dropbtn">பிரிவுகள்</a>
-          <div class="dropdown-content">
-            <a href="#">உலக இஸ்லாமியச் செய்திகள்</a>
-            <a href="#">இந்தியா</a>
-            <a href="#">மதுரை</a>
-          </div>
-        </div>
       </div>
       <form class="search-form" action="/search" method="get">
         <input type="text" class="search-bar" placeholder="தேட..."/>
