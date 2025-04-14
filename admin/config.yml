@@ -6,11 +6,28 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "_posts"
+  - name: "news"
+    label: "News Articles"
+    folder: "news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "தலைப்பு"         # Title
+        name: "title"
+        widget: "string"
+
+      - label: "தேதி"            # Date
+        name: "date"
+        widget: "datetime"
+
+      - label: "சுருக்கம்"        # Short Summary
+        name: "summary"
+        widget: "text"
+
+      - label: "படம்"            # Image
+        name: "thumbnail"
+        widget: "image"
+
+      - label: "முழுப் பதிவு"    # Full content
+        name: "body"
+        widget: "markdown"
