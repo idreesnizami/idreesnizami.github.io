@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>இஸ்லாமிய செய்திகள்</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #048c7f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .news-item {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .news-item h2 {
+      color: #333;
+    }
+    .meta {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #048c7f;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>இஸ்லாமிய செய்திகள்</h1>
+    <p><a href="index.html" style="color:white;">முகப்பு பக்கம்</a></p>
+  </header>
+
+  <div class="container" id="news-container">
+    <p>Loading news...</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Viewpoint Office
+  </footer>
+
+  <script>
+    async function loadNews() {
+      const repo = "idreesnizami/idreesnizami.github.io";
+      const apiUrl = `https://api.github.com/repos/${repo}/contents/news`;
+
+      try {
+        const res = await fetch(apiUrl);
+        const files = await res.json();
+        const container = document.getElementById("news-container");
+        container.innerHTML = "";
+
+        for (let file of files) {
+          const response = await fetch(file.download_url);
+          const content = await response.text();
+
+          const title = content.match(/title:\s*(.*)/)?.[1] || "No title";
+          const date = content.match(/date:\s*(.*)/)?.[1] || "";
+          const category = content.match(/category:\s*(.*)/)?.[1] || "";
+          const body = content.split("---").pop().trim();
+
+          const div = document.createElement("div");
+          div.className = "news-item";
+          div.innerHTML = `
+            <h2>${title}</h2>
+            <p class="meta">${new Date(date).toLocaleDateString()} | வகை: ${category}</p>
+            <p>${body.substring(0, 300)}...</p>
+          `;
+          container.appendChild(div);
+        }
+      } catch (error) {
+        console.error("Failed to load news:", error);
+        document.getElementById("news-container").innerHTML = "<p>தகவல் எடுக்க முடியவில்லை.</p>";
+      }
+    }
+
+    loadNews();
+  </script>
+</body>
+</html>
