@@ -3,196 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>அல்-ஹக் நியூஸ்</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
+  <title>Viewpoint Office - இஸ்லாமிய செய்திகள்</title>
   <style>
-    * {
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: #f3f3f3;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-    body {
-      font-family: 'Noto Serif Tamil', serif;
-      background: #f4f6f9;
-      color: #333;
+    header {
+      background: #047857;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #065f46;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Ensures footer stays at the bottom */
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
     }
-
-    .navbar {
-      background-color: #14532d;
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-container {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      color: #f0fdf4;
-      font-size: 1.3rem;
+    nav a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
     }
-
-    .menu-toggle {
-      display: none;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links a {
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1580137189272-c9379f8864fd?fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #facc15;
-    }
-
-    .search-form {
-      display: flex;
-      align-items: center;
-      background-color: #f0fdf4;
-      border-radius: 5px;
-    }
-
-    .search-bar {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .search-btn {
-      padding: 10px;
-      background-color: #14532d;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .search-btn:hover {
-      background-color: #facc15;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-links {
-        width: 100%;
-        flex-direction: column;
-        display: none;
-        margin-top: 10px;
-      }
-
-      .menu-toggle:checked + .hamburger + .nav-links {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    .container {
-      flex-grow: 1; /* This ensures the container takes available space and pushes the footer to the bottom */
-      padding: 30px;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: white;
+      padding: 60px 20px;
       text-align: center;
+    }
+    .hero h1 {
+      background-color: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .content {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    .card {
+      background: white;
       padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
-
-    footer .social-links a {
+    footer {
+      text-align: center;
+      background: #047857;
       color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-
-    footer .social-links a:hover {
-      text-decoration: underline;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">அல்-ஹக் நியூஸ்</div>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <div class="nav-links">
-        <a href="#">முகப்பு</a>
-        <a href="#">உலகம்</a>
-        <a href="#">இந்தியா</a>
-        <a href="#">மதுரை</a>
-        <a href="#">ஹதீஸ்</a>
-        <a href="#">பத்திரிக்கை</a>
-      </div>
-      <form class="search-form" action="/search" method="get">
-        <input type="text" class="search-bar" placeholder="தேட..."/>
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
+  <header>
+    <h1>Viewpoint Office</h1>
+    <p>உண்மை இஸ்லாமிய செய்திகள் | ஹதீஸ் | கட்டுரைகள்</p>
+  </header>
+
+  <nav>
+    <a href="index.html">முகப்பு</a>
+    <a href="news.html">செய்திகள்</a>
+    <a href="#contact">தொடர்பு</a>
   </nav>
 
-  <div class="container">
-    <div class="card">
-      <h3>ஹதீஸ் 1: நபி(ஸல்) அவர்களின் நற்பண்புகள்</h3>
-      <p><a href="#">மேலும் வாசிக்க...</a></p>
-    </div>
-    <!-- மற்ற ஹதீஸ்கள்/பட்டியல் இங்கே சேர்க்கலாம் -->
+  <div class="hero">
+    <h1>இன்று ஒரு ஹதீஸ்: "الدين النصيحة"</h1>
   </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>© 2025 அல்-ஹக் நியூஸ் | All rights reserved</p>
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
+  <div class="content">
+    <div class="card">
+      <h2>நீங்கள் அறிந்திருக்க வேண்டிய இஸ்லாமிய உண்மைகள்</h2>
+      <p>இந்த பகுதியில், நாம் இஸ்லாமிய சமூகம், ஷரீஅத் சட்டங்கள், சமகால நிகழ்வுகள் போன்றவற்றைப் பகிர்வோம்.</p>
     </div>
+
+    <div class="card">
+      <h2>சமீபத்திய செய்தி</h2>
+      <p>மதீனாவின் புனித மஸ்ஜிதில் நடந்த புதிய அபிவிருத்திகள் பற்றிய முழுமையான தகவல்கள்...</p>
+      <a href="news.html">மேலும் படிக்க...</a>
+    </div>
+  </div>
+
+  <footer id="contact">
+    &copy; 2025 Viewpoint Office | தொடர்புக்கு: idreesnizami@gmail.com
   </footer>
 
 </body>
