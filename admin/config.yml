@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: idreesnizami/idreesnizami.github.io
+  name: git-gateway
   branch: main
 
 media_folder: "images/uploads"
@@ -11,9 +10,7 @@ collections:
     label: "News"
     folder: "news"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
